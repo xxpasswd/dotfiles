@@ -21,13 +21,16 @@ for file in ${linkfiles[@]}; do
 done
 
 # 需要额外执行的脚本
-scripts=()
+scripts=(
+	'pip.sh'
+	)
 function brewsoft()
 {
 	for script in ${scripts[@]}; do
-		bash $DOTFILE_DIR/install/script
+		bash $DOTFILE_DIR/install/$script
 	done
 }
+
 
 # clean up
 unset linkfiles script
