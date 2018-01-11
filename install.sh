@@ -11,16 +11,23 @@ PATH="$DOTFILE_DIR/bin:$PATH"
 linkfiles=(
 	'bash_profile'
 	)
+# 若是系统中存在这些文件，先备份
+for file in ${linkfiles[@]}; do
+	[ -e ~/.$file ] && mv ~/.$file ~/.${file}_old
+done
 
-for file in "$DOTFILE_DIR"/linkfile/.${linkfiles[@]}; do
-	ln -sv "$file" ~	
+for file in ${linkfiles[@]}; do
+	ln -sv "$DOTFILE_DIR/linkfile/.$file" ~	
 done
 
 # 需要额外执行的脚本
 scripts=()
 function brewsoft()
 {
-	for script in "$DOTFILE_DIR"/install/${scripts[@]}; do
-		bash script
+	for script in ${scripts[@]}; do
+		bash $DOTFILE_DIR/install/script
 	done
 }
+
+# clean up
+unset linkfiles script

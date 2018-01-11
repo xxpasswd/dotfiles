@@ -28,9 +28,11 @@ PATH="$PATH:$DOTFILES_DIR/bin"
 # source配置文件
 source_files=(
 	'path'
+	'alias_and_functions.sh'
 	)
-for dotfile in "$DOTFILES_DIR"/system/${source_files[@]}; do
-	[ -f "$dotfile" ] && source "$dotfile"
+# 注意：路径不能写在for循环里面,不然会出错
+for dotfile in ${source_files[@]}; do
+	[ -f "$DOTFILES_DIR/system/$dotfile" ] && source $DOTFILES_DIR/system/$dotfile
 done
 
 
