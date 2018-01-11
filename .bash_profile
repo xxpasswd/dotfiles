@@ -1,1 +1,0 @@
-runcom/.bash_profile
