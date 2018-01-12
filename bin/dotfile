@@ -21,7 +21,6 @@ sub_help()
 sub_push()
 {
 	# 输出彩色
-	echo -e "\033[1;31mpush dotfiles  >>>>>>  githup\033[0m"
 	(
 		cd $DOTFILES_DIR
 		echo -e "\033[1;31mstatus  >>>>>>\033[0m"
@@ -29,7 +28,8 @@ sub_push()
 		git add .
 		echo -e "\033[1;31mcommit  >>>>>>\033[0m"
 		git commit -m "add"
-		[ $? -eq 0 ] && git push
+		echo -e "\033[1;31mpush  >>>>>>\033[0m"
+		git push
 	)
 }
 
