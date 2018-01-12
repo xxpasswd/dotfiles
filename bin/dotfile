@@ -27,7 +27,7 @@ sub_push()
 		git add .
 		git commit -m "add"
 		[ $? -eq 0 ] && git push
-		)
+	)
 }
 
 case $COMMAND_NAME in
