@@ -24,6 +24,7 @@ sub_push()
 	echo -e "\033[1;31mpush dotfiles  >>>>>>  githup\033[0m"
 	(
 		cd $DOTFILES_DIR
+		echo -e "\033[1;31mstatus  >>>>>>\033[0m"
 		git status
 		git add .
 		git commit -m "add"
