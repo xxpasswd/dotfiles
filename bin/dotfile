@@ -26,7 +26,7 @@ sub_push()
 		cd $DOTFILES_DIR
 		git add .
 		git commit -m "add"
-		git push
+		[ $? -eq 0 ] && git push
 		)
 }
 
