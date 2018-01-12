@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+
+# 脚本的名字
+BIN_NAME=$(basename $0)
+# 命令的名字
+COMMAND_NAME=$1
+
+
+sub_help()
+{
+	echo "Usage: $BIN_NAME <command>"
+	echo
+	echo "command:"
+	echo "  help           show this help message"
+	echo "  push           push dotfiles"
+	echo "  alias          edit alias_and_functions files"
+	echo "  path           edit path files"
+}
+
+sub_push()
+{
+	# 输出彩色
+	echo -e "\033[1;31mpush dotfiles  >>>>>>  githup\033[0m"
+	(
+		cd $DOTFILES_DIR
+		git add .
+		git commit -m "add"
+		git push
+		)
+}
+
+case $COMMAND_NAME in
+	""|"help"|"-h"|"--help" )
+		sub_help
+		;;
+	"push")
+		sub_push
+		;;
+esac
