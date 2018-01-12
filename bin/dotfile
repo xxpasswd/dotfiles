@@ -14,8 +14,8 @@ sub_help()
 	echo "command:"
 	echo "  help           show this help message"
 	echo "  push           push dotfiles"
-	echo "  alias          edit alias_and_functions files"
-	echo "  path           edit path files"
+	# echo "  alias          edit alias_and_functions files"
+	# echo "  path           edit path files"
 }
 
 sub_push()
@@ -36,5 +36,8 @@ case $COMMAND_NAME in
 		;;
 	"push")
 		sub_push
+		;;
+	*)
+		sub_help
 		;;
 esac
