@@ -27,6 +27,7 @@ sub_push()
 		echo -e "\033[1;31mstatus  >>>>>>\033[0m"
 		git status
 		git add .
+		echo -e "\033[1;31mcommit  >>>>>>\033[0m"
 		git commit -m "add"
 		[ $? -eq 0 ] && git push
 	)
