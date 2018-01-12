@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # python安装包
 apps=(
 	'cheat'

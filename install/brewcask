@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+apps=(
+	'android-platform-tools'
+)
+
+brew=$(which brew)
+[ -x $brew ] && brew cask install ${apps[@]}

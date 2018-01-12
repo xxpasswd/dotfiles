@@ -22,7 +22,8 @@ done
 
 # 需要额外执行的脚本
 scripts=(
-	'pip.sh'
+	'pip'
+	'brewcask'
 	)
 function brewsoft()
 {
