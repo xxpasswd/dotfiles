@@ -14,6 +14,7 @@ sub_help()
 	echo "command:"
 	echo "  help           show this help message"
 	echo "  push           push dotfiles"
+	echo "  open           open dotfiles project in sublime text"
 	# echo "  alias          edit alias_and_functions files"
 	# echo "  path           edit path files"
 }
@@ -28,9 +29,18 @@ sub_push()
 		git add .
 		echo -e "\033[1;31mcommit  >>>>>>\033[0m"
 		git commit -m "add"
-		echo -e "\033[1;31mpush  >>>>>>\033[0m"
-		git push
+		echo -e "\033[1;31mAre you want to push?\033[0m"
+		read var
+		if [ $var -eq "y" ]; then
+			echo -e "\033[1;31mpush  >>>>>>\033[0m"
+			git push
+		fi
 	)
+}
+
+sub_open()
+{
+	subl $DOTFILES_DIR 
 }
 
 case $COMMAND_NAME in
@@ -39,6 +49,9 @@ case $COMMAND_NAME in
 		;;
 	"push")
 		sub_push
+		;;
+	"open")
+		sub_open
 		;;
 	*)
 		sub_help

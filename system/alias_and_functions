@@ -30,15 +30,21 @@ function myvirtualenv()
 	virtualenv=$(which virtualenv)
 	# 字符串比较时，最好使用双中括号
 	[[ -n $@ ]] && virtualenv $@
+	success=$?
 
 	# 获取命令行的最后一个元素
 	for last in $@; do
 		true
 	done
-	cat >> ~/.virtualenv_alias <<EOF
+
+	# 判断命令是否执行成功，成功则写入别名
+	if [ $success -eq 0 ] && [ -e ~/.allenv/$last ]; then
+		cat >> ~/.virtualenv_alias <<EOF
 alias env-$last="source ~/.allenv/$last/bin/activate"
 EOF
+	fi
 }
+
 [ -e ~/.virtualenv_alias ] && source ~/.virtualenv_alias
 
 
