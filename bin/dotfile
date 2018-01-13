@@ -31,7 +31,7 @@ sub_push()
 		git commit -m "add"
 		echo -e "\033[1;31mAre you want to push?\033[0m"
 		read var
-		if [ $var -eq "y" ]; then
+		if [[ $var == "y" ]]; then
 			echo -e "\033[1;31mpush  >>>>>>\033[0m"
 			git push
 		fi
