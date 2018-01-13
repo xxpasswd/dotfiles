@@ -3,6 +3,7 @@
 # python安装包
 apps=(
 	'cheat'
+	'virtualenv'
 	)
 
 pip=$(which pip)

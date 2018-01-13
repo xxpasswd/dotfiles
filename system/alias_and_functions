@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
-# 函数
+# =================函数=====================
+
+# cd到工作目录
 function cdw()
 {
 	if [ -d ~/working ]; then
@@ -11,7 +13,37 @@ function cdw()
 	fi
 }
 
+# cd到python虚拟环境目录
+function cdenv()
+{
+	if [ -d ~/.allenv ]; then
+		cd ~/.allenv
+	else
+		mkdir ~/.allenv
+		cd ~/.allenv
+	fi
+}
+
+# 创建python虚拟环境，并添加别名
+function myvirtualenv()
+{
+	virtualenv=$(which virtualenv)
+	# 字符串比较时，最好使用双中括号
+	[[ -n $@ ]] && virtualenv $@
+
+	# 获取命令行的最后一个元素
+	for last in $@; do
+		true
+	done
+	cat >> ~/.virtualenv_alias <<EOF
+alias env-$last="source ~/.allenv/$last/bin/activate"
+EOF
+}
+[ -e ~/.virtualenv_alias ] && source ~/.virtualenv_alias
 
 
-# 别名设置
+
+
+# ===============别名设置========================
+
 alias py="python"

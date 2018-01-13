@@ -5,7 +5,7 @@
 
 ****
 - #### bin：关于此dotfile的可执行命令
-- #### install：安装脚本
+- #### install：安装其他软件的脚本
 - #### linkfile：必须链接到系统相应位置才能起作用的文件
 - #### system：一些bash的加载文件
 - #### install.sh：初次安装的脚本
