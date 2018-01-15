@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 apps=(
-	'android-platform-tools'
+	'android-platform-tools' 
+	# 'tesseract'
 )
 
 brew=$(which brew)

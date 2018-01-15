@@ -4,6 +4,8 @@
 apps=(
 	'cheat'
 	'virtualenv'
+	'virtualenvwraper'
+	# 'baidu-api'
 	)
 
 pip=$(which pip)

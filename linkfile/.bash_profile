@@ -29,6 +29,7 @@ PATH="$PATH:$DOTFILES_DIR/bin"
 source_files=(
 	'path'
 	'alias_and_functions'
+	'virtualenvwrapper_path'
 	)
 # 注意：路径不能写在for循环里面,不然会出错
 for dotfile in ${source_files[@]}; do
