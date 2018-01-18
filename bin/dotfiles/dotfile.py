@@ -51,7 +51,7 @@ def gst():
     subprocess.run('git status',shell=True,cwd=path)   
 
 @cli.command()
-@click.option('-m',default='add')
+@click.option('-m',default='add',help='commit message')
 def gp(m):
     '''
     push dot file to github
@@ -69,10 +69,10 @@ def gcmsg():
     '''
 
     click.echo(click.style(">>>>>>>>>git commit -m 'add'",fg='green'))
-    subprocess.run('git commit -m "add"',shell=True,cwd=path)  
+    subprocess.run('git commit -a -m "add"',shell=True,cwd=path)  
 
 @cli.command()
-@click.option('-m',default='add')
+@click.option('-m',default='add',help='commit message')
 def commit(m):
     '''
     add files and commit with 'add'
