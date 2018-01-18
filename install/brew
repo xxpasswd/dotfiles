@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+apps=(
+	'android-platform-tools' 
+	# 'tesseract'
+)
+
+brew=$(which brew) || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";brew=$(which brew)
+[ -x $brew ] && brew install ${apps[@]}
+
+brew tap caskroom/cask

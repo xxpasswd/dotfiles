@@ -4,7 +4,7 @@ DOTFILE_DIR="$(cd $(dirname $BASH_SOURCE) && pwd)"
 export DOTFILE_DIR
 
 # make unilities available
-PATH="$DOTFILE_DIR/bin:$PATH"
+# PATH="$DOTFILE_DIR/bin:$PATH"
 
 
 # 创建必要的链接文件

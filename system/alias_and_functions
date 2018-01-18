@@ -14,15 +14,15 @@ function cdw()
 }
 
 # cd到python虚拟环境目录
-function cdenv()
-{
-	if [ -d ~/.allenv ]; then
-		cd ~/.allenv
-	else
-		mkdir ~/.allenv
-		cd ~/.allenv
-	fi
-}
+# function cdenv()
+# {
+# 	if [ -d ~/.allenv ]; then
+# 		cd ~/.allenv
+# 	else
+# 		mkdir ~/.allenv
+# 		cd ~/.allenv
+# 	fi
+# }
 
 # 创建python虚拟环境，并添加别名
 # function myvirtualenv()
@@ -45,13 +45,15 @@ function cdenv()
 # 	fi
 # }
 
-# [ -e ~/.virtualenv_alias ] && source ~/.virtualenv_alias
+[ -e ~/.virtualenv_alias ] && source ~/.virtualenv_alias
 
 
 
 
 # ===============别名设置========================
 
-alias py="python"
-alias p3="python3"
+alias py="python3"
+alias p2="python"
+alias pip="pip3"
+alias pip2="pip2"
 alias cdd="cd ~/Desktop"

@@ -1,0 +1,5 @@
+Usage:
+
+  $ pip install --editable .
+  $ eval "$(_DOTFILE_COMPLETE=source dotfile)"
+  $ dotfile --help

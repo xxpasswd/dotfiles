@@ -1,0 +1,1 @@
+[ -x dotfile ] && _DOTFILE_COMPLETE=source dotfile

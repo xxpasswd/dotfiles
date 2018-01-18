@@ -22,7 +22,7 @@ fi
 
 
 # make utilities available
-PATH="$PATH:$DOTFILES_DIR/bin"
+# PATH="$PATH:$DOTFILES_DIR/bin"
 
 
 # source配置文件
@@ -30,6 +30,7 @@ source_files=(
 	'path'
 	'alias_and_functions'
 	'virtualenvwrapper_path'
+	'dotfile_completion.sh'
 	)
 # 注意：路径不能写在for循环里面,不然会出错
 for dotfile in ${source_files[@]}; do
