@@ -72,14 +72,15 @@ def gcmsg():
     subprocess.run('git commit -m "add"',shell=True,cwd=path)  
 
 @cli.command()
-def commit():
+@click.option('-m',default='add')
+def commit(m):
     '''
     add files and commit with 'add'
     '''
 
     click.echo(click.style(">>>>>>>>>git add --all\n>>>>>>>>>git commit -m 'add'",fg='green'))
     subprocess.run('git add --all',shell=True,cwd=path)
-    subprocess.run('git commit -m "add"',shell=True,cwd=path)
+    subprocess.run('git commit -m "{}"'.format(m),shell=True,cwd=path)
 
 
 
