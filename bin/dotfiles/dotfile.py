@@ -51,12 +51,15 @@ def gst():
     subprocess.run('git status',shell=True,cwd=path)   
 
 @cli.command()
-def gp():
+@click.option('-m',default='add')
+def gp(m):
     '''
     push dot file to github
     '''
 
-    click.echo(click.style(">>>>>>>>>git push",fg='green'))
+    click.echo(click.style(">>>>>>>>>git add --all\n>>>>>>>>>git commit -m '{}'\n>>>>>>>>>git push".format(m),fg='green'))
+    subprocess.run('git add --all',shell=True,cwd=path)   
+    subprocess.run('git commit -m "{}"'.format(m),shell=True,cwd=path)   
     subprocess.run('git push',shell=True,cwd=path)   
 
 @cli.command()
