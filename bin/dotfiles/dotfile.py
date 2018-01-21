@@ -52,7 +52,7 @@ def gst():
 
 @cli.command()
 @click.option('-m',default='add',help='commit message')
-def gp(m):
+def gp_all(m):
     '''
     push dot file to github
     '''
@@ -70,18 +70,6 @@ def gcmsg():
 
     click.echo(click.style(">>>>>>>>>git commit -m 'add'",fg='green'))
     subprocess.run('git commit -a -m "add"',shell=True,cwd=path)  
-
-@cli.command()
-@click.option('-m',default='add',help='commit message')
-def commit_push(m):
-    '''
-    add files and commit with 'add'
-    '''
-
-    click.echo(click.style(">>>>>>>>>git add --all\n>>>>>>>>>git commit -m 'add'",fg='green'))
-    subprocess.run('git add --all',shell=True,cwd=path)
-    subprocess.run('git commit -m "{}"'.format(m),shell=True,cwd=path)
-    subprocess.run('git push',shell=True,cwd=path)
 
 
 
