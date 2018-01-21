@@ -58,3 +58,4 @@ alias pip="pip3"
 alias pip2="pip2"
 alias cddesk="cd ~/Desktop"
 alias cdd="cd ~/Downloads"
+alias path="echo -e ${PATH//:/\\n}" # -e 激活转义字符
