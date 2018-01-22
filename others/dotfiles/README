@@ -3,3 +3,5 @@ Usage:
   $ pip install --editable .
   $ eval "$(_DOTFILE_COMPLETE=source dotfile)"
   $ dotfile --help
+
+  这个python脚本命令不用了，安装时不需要安装
