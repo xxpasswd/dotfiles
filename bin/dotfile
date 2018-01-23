@@ -23,7 +23,7 @@ sub_push()
 {
 	# 输出彩色
 	(
-		cd $DOTFILES_DIR
+		cd $_DOTFILES_DIR
 		echo -e "\033[1;31mstatus  >>>>>>\033[0m"
 		git status
 		git add .
@@ -40,7 +40,7 @@ sub_push()
 
 sub_open()
 {
-	subl $DOTFILES_DIR 
+	subl $_DOTFILES_DIR 
 }
 
 case $COMMAND_NAME in

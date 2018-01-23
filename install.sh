@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-DOTFILE_DIR="$(cd $(dirname $BASH_SOURCE) && pwd)"
-export DOTFILE_DIR
+_DOTFILE_DIR="$(cd $(dirname $BASH_SOURCE) && pwd)"
+export _DOTFILE_DIR
 
 # make unilities available
-# PATH="$DOTFILE_DIR/bin:$PATH"
+# PATH="$_DOTFILE_DIR/bin:$PATH"
 
 
 # 创建必要的链接文件
@@ -17,7 +17,7 @@ for file in ${linkfiles[@]}; do
 done
 
 for file in ${linkfiles[@]}; do
-	ln -sv "$DOTFILE_DIR/linkfile/.$file" ~	
+	ln -sv "$_DOTFILE_DIR/linkfile/.$file" ~	
 done
 
 # 需要额外执行的脚本
@@ -28,7 +28,7 @@ scripts=(
 function brewsoft()
 {
 	for script in ${scripts[@]}; do
-		bash $DOTFILE_DIR/install/$script
+		bash $_DOTFILE_DIR/install/$script
 	done
 }
 
