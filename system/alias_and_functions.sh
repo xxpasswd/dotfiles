@@ -52,6 +52,7 @@ function cdw()
 
 # ===============别名设置========================
 
+alias cp="\cp -i" # 复制时，若目的文件存在，则询问是否覆盖
 alias py="python3"
 alias p2="python"
 alias pip="pip3"
